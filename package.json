@@ -1,0 +1,14 @@
+{
+  "name": "goit-js-hw-10-food-service-ver2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "validator": "^13.6.0"
+  }
+}
