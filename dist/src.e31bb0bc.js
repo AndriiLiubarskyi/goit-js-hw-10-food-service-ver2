@@ -2336,13 +2336,20 @@ function createCardMenu(cards) {
 
 ;
 var bodyTheme = document.querySelector('body');
-bodyTheme.classList.add(localStorage.getItem('theme'));
-var checkBox = document.querySelector('#theme-switch-toggle');
-checkBox.addEventListener('change', changeColor);
 var theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme'
 };
+
+if (localStorage.getItem('theme')) {
+  bodyTheme.classList.add(localStorage.getItem('theme'));
+} else {
+  bodyTheme.classList.add(theme.LIGHT);
+}
+
+;
+var checkBox = document.querySelector('#theme-switch-toggle');
+checkBox.addEventListener('change', changeColor);
 
 function changeColor() {
   var bodyTheme = document.querySelector('body');
@@ -2390,7 +2397,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49868" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50557" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

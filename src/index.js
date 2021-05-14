@@ -10,15 +10,22 @@ function createCardMenu(cards) {
 };
 
     const bodyTheme = document.querySelector('body');
-bodyTheme.classList.add(localStorage.getItem('theme'));
+    
+    const theme = {
+        LIGHT: 'light-theme',
+        DARK: 'dark-theme',
+};
+
+if (localStorage.getItem('theme')) {
+    bodyTheme.classList.add(localStorage.getItem('theme'))
+}
+else {
+    bodyTheme.classList.add(theme.LIGHT)
+};
 
 const checkBox = document.querySelector('#theme-switch-toggle');
 checkBox.addEventListener('change', changeColor);
 
-const theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
-};
 
 function changeColor() {
     const bodyTheme = document.querySelector('body');
